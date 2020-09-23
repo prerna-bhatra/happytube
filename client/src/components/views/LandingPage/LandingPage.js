@@ -6,9 +6,7 @@ import moment from 'moment';
 const { Title } = Typography;
 const { Meta } = Card;
 function LandingPage() {
-
     const [Videos, setVideos] = useState([])
-
     useEffect(() => {
         axios.get('/api/video/getVideos')
             .then(response => {
@@ -20,10 +18,6 @@ function LandingPage() {
                 }
             })
     }, [])
-
-
-
-
 
     const renderCards = Videos.map((video, index) => {
 
@@ -55,9 +49,6 @@ function LandingPage() {
         </Col>
 
     })
-
-
-
     return (
         <div style={{ width: '85%', margin: '3rem auto' }}>
             <Title level={2} > Recommended </Title>
